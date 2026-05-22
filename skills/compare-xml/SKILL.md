@@ -7,6 +7,10 @@ description: Compare two XML files or strings and identify the differences (adde
 
 Use `npx @compare-xml/cli` to compare two XML values and identify their differences.
 
+## Online Playground
+
+Try it out at [https://comparexml.com](https://comparexml.com)
+
 ## Usage
 
 ```bash
