@@ -1,0 +1,9 @@
+{
+  "name": "compare-xml",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unitstack/compare-xml.git"
+  }
+}
