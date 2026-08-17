@@ -27,6 +27,7 @@ This is a pnpm workspace:
 |---------|-------------|
 | [`@compare-xml/core`](./packages/compare-xml-core) | Core comparison library (programmatic API). |
 | [`@compare-xml/cli`](./packages/compare-xml-cli) | Command-line tool & MCP server, built on top of `core`. |
+| [`compare-xml-vscode`](./apps/compare-xml-vscode) | VSCode extension: aligned diff view + difference navigator. |
 
 ## Quick Start
 
@@ -116,6 +117,8 @@ pnpm -r lint
 The repo layout:
 
 ```
+apps/
+└── compare-xml-vscode/   # VSCode extension
 packages/
 ├── compare-xml-core/     # @compare-xml/core — library
 ├── compare-xml-cli/      # @compare-xml/cli  — CLI + MCP server

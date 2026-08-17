@@ -1,0 +1,124 @@
+{
+  "name": "compare-xml-vscode",
+  "displayName": "Compare XML",
+  "description": "Semantic XML comparison: aligned diff view and a type-grouped difference navigator, powered by @compare-xml/core.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publisher": "unitstack",
+  "homepage": "https://comparexml.com",
+  "icon": "media/icon.png",
+  "keywords": ["xml", "compare", "diff"],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unitstack/compare-xml.git",
+    "directory": "apps/compare-xml-vscode"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onView:compare-xml.diffs"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Compare XML",
+      "properties": {
+        "compare-xml.arrayCompareMethod": {
+          "type": "string",
+          "enum": ["byIndex", "lcs", "unordered"],
+          "default": "byIndex",
+          "description": "How repeated child elements are compared: by index, minimal diff (LCS), or unordered multiset match."
+        },
+        "compare-xml.keyCaseInsensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ignore case when matching element and attribute names."
+        },
+        "compare-xml.valueCaseInsensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ignore case when comparing text and attribute values."
+        }
+      }
+    },
+    "commands": [
+      { "command": "compare-xml.compareWith", "title": "Compare Active Editor with...", "category": "Compare XML" },
+      { "command": "compare-xml.selectForCompare", "title": "Select for Compare", "category": "Compare XML" },
+      { "command": "compare-xml.compareWithSelected", "title": "Compare with Selected", "category": "Compare XML" },
+      { "command": "compare-xml.configureOptions", "title": "Configure Comparison Options", "category": "Compare XML", "icon": "$(settings-gear)" },
+      { "command": "compare-xml.swapSides", "title": "Swap Sides", "category": "Compare XML", "icon": "$(arrow-swap)" },
+      { "command": "compare-xml.clearResults", "title": "Clear Results", "category": "Compare XML", "icon": "$(clear-all)" },
+      { "command": "compare-xml.revealDiff", "title": "Reveal Difference", "category": "Compare XML" }
+    ],
+    "submenus": [
+      { "id": "compare-xml.submenu", "label": "Compare XML" }
+    ],
+    "menus": {
+      "commandPalette": [
+        { "command": "compare-xml.compareWithSelected", "when": "compare-xml.hasSelected" },
+        { "command": "compare-xml.revealDiff", "when": "false" }
+      ],
+      "compare-xml.submenu": [
+        { "command": "compare-xml.compareWith", "group": "compare-xml@1" },
+        { "command": "compare-xml.selectForCompare", "group": "compare-xml@2" },
+        { "command": "compare-xml.compareWithSelected", "when": "compare-xml.hasSelected", "group": "compare-xml@3" }
+      ],
+      "editor/title/context": [
+        { "submenu": "compare-xml.submenu", "when": "resourceLangId == xml", "group": "compare-xml" }
+      ],
+      "editor/context": [
+        { "submenu": "compare-xml.submenu", "when": "resourceLangId == xml", "group": "compare-xml" }
+      ],
+      "explorer/context": [
+        { "submenu": "compare-xml.submenu", "when": "resourceExtname == .xml", "group": "compare-xml" }
+      ],
+      "view/title": [
+        { "command": "compare-xml.configureOptions", "when": "view == compare-xml.diffs", "group": "navigation@1" },
+        { "command": "compare-xml.swapSides", "when": "view == compare-xml.diffs", "group": "navigation@2" },
+        { "command": "compare-xml.clearResults", "when": "view == compare-xml.diffs && compare-xml.hasActiveSession", "group": "navigation@3" }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "compare-xml", "title": "Compare XML", "icon": "media/icon.svg" }
+      ]
+    },
+    "views": {
+      "compare-xml": [
+        { "id": "compare-xml.diffs", "name": "Differences" }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "compare-xml.diffs",
+        "contents": "No comparison yet.\nRun [Compare XML: Compare Active Editor with...](command:compare-xml.compareWith) to start."
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "lint": "eslint",
+    "test": "npm run test-type && npm run test-unit",
+    "test-type": "tsc --noEmit",
+    "test-unit": "vitest run",
+    "vscode:package": "npm run build && vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@compare-xml/core": "workspace:*",
+    "@compare-xml/eslint-config": "workspace:*",
+    "@compare-xml/tsconfig": "workspace:*",
+    "@types/node": "^20",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3",
+    "esbuild": "^0.24.0",
+    "eslint": "^9",
+    "globals": "^16.5.0",
+    "typescript": "^5",
+    "vitest": "^4.0.18"
+  }
+}
