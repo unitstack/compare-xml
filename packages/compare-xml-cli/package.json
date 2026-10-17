@@ -1,12 +1,15 @@
 {
   "name": "@compare-xml/cli",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.unitstack/compare-xml",
   "description": "Command-line tool and MCP server for structured XML comparison.",
   "keywords": [
     "compare xml",
     "xml comparison",
-    "xml diff"
+    "xml diff",
+    "mcp",
+    "model context protocol"
   ],
   "repository": {
     "type": "git",

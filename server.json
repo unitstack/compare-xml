@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.unitstack/compare-xml",
+  "title": "Compare XML",
+  "description": "Compare XML values and return structured differences with configurable matching options.",
+  "repository": {
+    "url": "https://github.com/unitstack/compare-xml",
+    "source": "github",
+    "id": "1246779665",
+    "subfolder": "packages/compare-xml-cli"
+  },
+  "version": "0.1.1",
+  "websiteUrl": "https://comparexml.com",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@compare-xml/cli",
+      "version": "0.1.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--mcp"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
