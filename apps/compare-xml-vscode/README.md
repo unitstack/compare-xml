@@ -2,7 +2,7 @@
 
 Semantic XML comparison inside your editor — find what changed between two XML documents, with control over how elements, attributes, values, and repeated child elements are matched. Powered by [`@compare-xml/core`](https://github.com/unitstack/compare-xml).
 
-> Online playground: **[comparexml.com](https://comparexml.com)**
+> Online playground: **[comparejson.com/tools/compare-xml](https://comparejson.com/tools/compare-xml/)**
 
 ## Features
 

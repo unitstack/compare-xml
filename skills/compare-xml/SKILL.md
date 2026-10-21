@@ -9,7 +9,7 @@ Use `npx @compare-xml/cli` to compare two XML values and identify their differen
 
 ## Online Playground
 
-Try it out at [https://comparexml.com](https://comparexml.com)
+Try it out at [https://comparejson.com/tools/compare-xml/](https://comparejson.com/tools/compare-xml/)
 
 ## Usage
 
