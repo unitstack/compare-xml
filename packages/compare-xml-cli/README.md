@@ -4,7 +4,7 @@ A command-line tool and [MCP](https://modelcontextprotocol.io) server for compar
 
 ## Online Playground
 
-Try it out at [https://comparexml.com](https://comparexml.com)
+Try it out at [https://comparejson.com/tools/compare-xml/](https://comparejson.com/tools/compare-xml/)
 
 ## Installation
 

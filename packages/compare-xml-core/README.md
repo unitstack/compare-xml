@@ -4,7 +4,7 @@ A lightweight TypeScript library for deep comparison of XML documents. Detects a
 
 ## Online Playground
 
-Try it out at [https://comparexml.com](https://comparexml.com)
+Try it out at [https://comparejson.com/tools/compare-xml/](https://comparejson.com/tools/compare-xml/)
 
 ## Installation
 
